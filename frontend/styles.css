@@ -7,6 +7,7 @@
 }
 
 body {
+  margin: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,4 +16,20 @@ body {
   font-family: "Karla", sans-serif;
   font-size: 25px;
   color: whitesmoke;
+}
+#banner {
+  background: #1f2937;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 0px;
+  padding: 10px 10px;
+}
+
+.icon {
+  color: #4adf86;
+  background: whitesmoke;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 10px 5px;
 }
