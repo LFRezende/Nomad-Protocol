@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/MakersApp.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract MakersApp {\n    // Initial settings\n    bytes32[] public creditedSources;\n    mapping(bytes32 => string) public addressToSourceName;\n    mapping(bytes32 => uint256) public idToIndex;\n    mapping(bytes32 => bytes32) public hashToSource;\n    address owner;\n\n    modifier isOwner() {\n        require(\n            msg.sender == owner,\n            \"You are not the administrator - Not allowed to do this.\"\n        );\n        _;\n    }\n    modifier isSource() {\n        require(idToIndex[hashAddress(msg.sender)] > 0, \"Not a Source!\");\n        _;\n    }\n\n    // Assuring the correct ownability\n    constructor() {\n        owner = msg.sender;\n        // Filling the 0th index of the list, for mapping purposes, with a dummy Id.\n        creditedSources.push(\n            0x0000000000000000000000000000000000000000000000000000000000000000\n        ); // Dummy Id\n    }\n\n    // The hashing could be done outside of the blockchain, 4real\n    function hashText(string memory _text) public pure returns (bytes32) {\n        return keccak256(abi.encodePacked(_text));\n    }\n\n    function hashAddress(address _wallet) public pure returns (bytes32) {\n        return keccak256(abi.encodePacked(_wallet));\n    }\n\n    // The Owner of the contract can append sources allowed to add data\n    function addSource(string memory _name) public isOwner {\n        bytes32 sourceId = hashAddress(msg.sender);\n        addressToSourceName[sourceId] = _name;\n        creditedSources.push(sourceId);\n        idToIndex[sourceId] = creditedSources.length;\n    }\n\n    // Only credited Sources are allowed to append information to the chain\n    function addText(string memory _text) public isSource {\n        bytes32 hashedText = hashText(_text);\n        hashToSource[hashedText] = hashAddress(msg.sender); // Weird, but still operational...\n    }\n\n    // If the text has been appended by some truthful source, the hash was mapped before.\n    function isFake(string memory _text) public view returns (bool) {\n        if (hashToSource[hashText(_text)] > 0) return true;\n        return false;\n    }\n\n    // Note to sELF: Gotta stop using the wallet as a private key\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
