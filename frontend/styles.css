@@ -2,6 +2,16 @@
   color: #4adf86;
 }
 
+.greenHover:hover {
+  color: #4adf86;
+  transition: 0.5s;
+  /* background: whitesmoke; */
+  border-radius: 10px;
+  border-bottom: 2px solid #4adf86;
+  border: 2px solid transparent;
+  padding: 5px 7px;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -24,12 +34,56 @@ body {
   width: 100%;
   margin-top: 0px;
   padding: 10px 10px;
+  border-bottom: 1px solid black;
 }
 
+#hero {
+  margin: 20px auto;
+}
 .icon {
-  color: #4adf86;
-  background: whitesmoke;
+  color: white;
   border-radius: 10px;
   font-size: 20px;
   padding: 10px 5px;
+}
+
+.icon:hover {
+  color: black;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  transition: 1s;
+  font-size: 20px;
+  padding: 10px 5px;
+}
+.subBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.textSpace {
+  margin: 10px auto;
+}
+
+#checkText {
+  width: 200px;
+  height: 150px;
+}
+
+.button {
+  background: whitesmoke;
+  color: #4adf86;
+  font-weight: bold;
+  font-family: "Karla", sans-serif;
+  border: 0px solid black;
+  border-radius: 15px;
+  padding: 5px 8px;
+}
+
+.button:hover {
+  background: #4adf86;
+  color: whitesmoke;
+  transition: 0.75s;
 }
