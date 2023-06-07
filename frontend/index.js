@@ -2,9 +2,11 @@ import { ethers } from "./ethers-5.1.esm.min.js";
 import { goerliAddress, abi } from "./constants.js";
 
 let connectButton = document.getElementById("connectWallet");
+let factText = document.getElementById("checkText");
 let factButton = document.getElementById("factButton");
 
 connectButton.onclick = connect;
+factButton.onclick = isFakeCheck;
 
 async function connect() {
   if (typeof window.ethereum != "undefined") {
@@ -17,7 +19,9 @@ async function connect() {
   }
 }
 
-async function isFakeCheck() {}
+async function isFakeCheck() {
+  console.log("It's ALIVE!!!");
+}
 
 //
 // async function addTextJs() {} -> Hidden addition via Proper Interface for Publishers.
