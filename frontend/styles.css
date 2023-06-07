@@ -80,14 +80,25 @@ body {
   padding: 6px 3px;
 }
 
+#followMakers:hover {
+  border-left: 1px solid transparent;
+  transition: 1s;
+}
+#github:hover {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  transition: 1s;
+}
+#address:hover {
+  border-right: 1px solid transparent;
+  transition: 1s;
+}
 .icon:hover {
   color: black;
   background-color: whitesmoke;
-  border-right: 1px solid transparent;
   transition: 1s;
   font-size: 20px;
   padding: 6px 10px;
-  border-bottom: 1px solid transparent;
 }
 .subBody {
   display: flex;
@@ -103,8 +114,8 @@ body {
   justify-content: space-evenly;
   align-items: center;
   height: 350px;
-  background: #4adf86;
-  color: whitesmoke;
+  background: whitesmoke;
+  color: black;
   width: 100%;
 }
 
@@ -123,6 +134,7 @@ body {
 
 #connectBody {
   margin-top: 20px;
+  margin-bottom: 20px;
   height: 80px;
 }
 .button {
