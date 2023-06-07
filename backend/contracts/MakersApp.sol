@@ -2,7 +2,6 @@
 pragma solidity ^0.8.0;
 
 contract MakersApp {
-    // Initial settings
     bytes32[] public creditedSources;
     mapping(bytes32 => string) public addressToSourceName;
     mapping(bytes32 => uint256) public idToIndex;
@@ -25,9 +24,7 @@ contract MakersApp {
     constructor() {
         owner = msg.sender;
         // Filling the 0th index of the list, for mapping purposes, with a dummy Id.
-        creditedSources.push(
-            0x0000000000000000000000000000000000000000000000000000000000000000
-        ); // Dummy Id
+        creditedSources.push(0x000000000000000000000000000000000000000000); // Dummy Id
     }
 
     // The hashing could be done outside of the blockchain, 4real
@@ -40,8 +37,8 @@ contract MakersApp {
     }
 
     // The Owner of the contract can append sources allowed to add data
-    function addSource(string memory _name) public isOwner {
-        bytes32 sourceId = hashAddress(msg.sender);
+    function addSource(string memory _name, address _wallet) public isOwner {
+        bytes32 sourceId = hashAddress(_wallet);
         addressToSourceName[sourceId] = _name;
         creditedSources.push(sourceId);
         idToIndex[sourceId] = creditedSources.length;

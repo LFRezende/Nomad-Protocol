@@ -1,4 +1,5 @@
 import { ethers } from "./ethers-5.1.esm.min.js";
+import { goerliAddress, abi } from "./constants.js";
 
 let connectButton = document.getElementById("connectWallet");
 
@@ -14,3 +15,11 @@ async function connect() {
     console.log("No EVM-Based Wallet.");
   }
 }
+
+async function isFakeCheck() {
+    
+}
+
+// 
+// async function addTextJs() {} -> Hidden addition via Proper Interface for Publishers.
+// async function addSourceJs() {} -> Hidden addition via Remix -> Only the ADM may do so

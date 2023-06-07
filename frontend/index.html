@@ -23,9 +23,40 @@
       <label class="toGreen">Makers</label>
       <label class="green toWhite bold">App</label>
     </div>
+    <div class="">
+      <label class="greenHover bold">Truth</label>, deployed by
+      <label class="bold underline toWhite">tech.</label>
+    </div>
+    <div>
+      A blockchain-based software developed by
+      <label class="green toWhite bold">
+        <a
+          href="https://www.linkedin.com/in/luis-felipe-rezende/"
+          ,
+          target="_blank"
+          >Luis Felipe Rezende</a
+        >
+      </label>
+    </div>
     <div class="subBody">
-      <div class="textSpace">
+      <div class="textSpace" id="connectBody">
         Connect your <label class="greenHover">Crypto Wallet</label>
+        <div><button id="connectWallet" class="button">Connect</button></div>
+      </div>
+
+      <div class="textSpace">
+        Write below the piece of text you wish to check if is true or false.
+      </div>
+      <input
+        id="checkText"
+        type="text"
+        placeholder="News to be credit-checked"
+      />
+      <div id="struct"></div>
+    </div>
+    <div class="subBodyTwo">
+      <div class="textSpace" id="twoHead">
+        Connect your <label class="greenHover bold">Crypto Wallet</label>
       </div>
       <button id="connectWallet" class="button">Connect</button>
       <div class="textSpace">
@@ -38,6 +69,7 @@
       />
       <div id="struct"></div>
     </div>
+    <div id="OwnerSpace"></div>
     <script src="./index.js" type="module"></script>
     <script
       src="https://cdn.plot.ly/plotly-2.20.0.min.js"
