@@ -51,6 +51,7 @@
 /* ### Native Structure Styling ###*/
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 body {
@@ -82,6 +83,12 @@ body {
   margin-top: 0px;
   padding: 10px 10px;
   border-bottom: 1px solid black;
+}
+
+.lineCredited {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #hero {
@@ -130,6 +137,17 @@ body {
   transition: 1s;
 }
 
+#trustText:hover {
+  transition: 1s;
+  border-bottom: 1px solid transparent;
+}
+
+#note {
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 /* ### Widgets Classed ###*/
 .icon {
   color: black;
@@ -149,7 +167,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 350px;
+  height: 320px;
 }
 
 .subBodyTwo {
@@ -157,7 +175,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 350px;
+  height: 800px;
   background: whitesmoke;
   color: black;
   width: 100%;
@@ -181,4 +199,17 @@ body {
   transition: 0.75s;
   border-radius: 20px;
   padding: 8px 15px;
+}
+
+/* ### Image Format ### */
+
+.bbcFormat {
+  width: 30%;
+}
+.imgFormat {
+  width: 20%;
+}
+
+.reduceToFifteenPercent {
+  width: 15%;
 }
