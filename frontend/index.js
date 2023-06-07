@@ -2,6 +2,7 @@ import { ethers } from "./ethers-5.1.esm.min.js";
 import { goerliAddress, abi } from "./constants.js";
 
 let connectButton = document.getElementById("connectWallet");
+let factButton = document.getElementById("factButton");
 
 connectButton.onclick = connect;
 
@@ -16,10 +17,8 @@ async function connect() {
   }
 }
 
-async function isFakeCheck() {
-    
-}
+async function isFakeCheck() {}
 
-// 
+//
 // async function addTextJs() {} -> Hidden addition via Proper Interface for Publishers.
 // async function addSourceJs() {} -> Hidden addition via Remix -> Only the ADM may do so
