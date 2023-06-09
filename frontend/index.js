@@ -29,9 +29,7 @@ async function connect() {
 }
 
 async function isFakeCheck() {
-  console.log(window.ethereum.chainId);
-  const text = factText.textContent;
-  console.log(typeof text);
+  const text = factText.value;
   if (typeof window.ethereum != "undefined") {
     // Entered the function
     console.log("It's ALIVE!!!");
