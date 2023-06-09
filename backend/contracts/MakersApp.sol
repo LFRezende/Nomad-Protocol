@@ -6,6 +6,7 @@ contract MakersApp {
     mapping(bytes32 => string) public addressToSourceName;
     mapping(bytes32 => uint256) public idToIndex;
     mapping(bytes32 => bytes32) public hashToSource;
+
     address owner;
 
     modifier isOwner() {

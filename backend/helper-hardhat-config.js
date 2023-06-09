@@ -8,6 +8,10 @@ const networkConfig = {
     name: "polygon",
     addressOfMakersApp: "",
   },
+  31337: {
+    name: "hardhat",
+    addressOfMakersApp: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  },
 };
 
 const developmentChains = ["hardhat", "localhost"];
