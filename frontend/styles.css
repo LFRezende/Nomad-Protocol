@@ -148,6 +148,7 @@ body {
 #trustText:hover {
   transition: 1s;
   border-bottom: 1px solid transparent;
+  margin-top: 30px;
 }
 
 #note {
