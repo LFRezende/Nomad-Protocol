@@ -152,6 +152,10 @@ body {
   margin-top: 0px;
 }
 
+#response {
+  font-size: 10px;
+}
+
 /* ### Widgets Classed ###*/
 .icon {
   color: black;

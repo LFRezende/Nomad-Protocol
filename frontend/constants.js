@@ -1,4 +1,4 @@
-export const goerliAddress = "0x248A81808c2A67a19Db4E0CFd65050c4B1537c59";
+export const goerliAddress = "0x8c82b77894f9a1d7bc341af974b545e59428fa67";
 export const localAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 export const abi = [
   {
@@ -12,6 +12,11 @@ export const abi = [
         internalType: "string",
         name: "_name",
         type: "string",
+      },
+      {
+        internalType: "address",
+        name: "_wallet",
+        type: "address",
       },
     ],
     name: "addSource",

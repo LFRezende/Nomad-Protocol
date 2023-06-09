@@ -41,8 +41,8 @@ contract MakersApp {
     function addSource(string memory _name, address _wallet) public isOwner {
         bytes32 sourceId = hashAddress(_wallet);
         addressToSourceName[sourceId] = _name;
-        creditedSources.push(sourceId);
         idToIndex[sourceId] = creditedSources.length;
+        creditedSources.push(sourceId);
     }
 
     // Only credited Sources are allowed to append information to the chain
@@ -56,6 +56,4 @@ contract MakersApp {
         if (hashToSource[hashText(_text)] > 0) return true;
         return false;
     }
-
-    // Note to sELF: Gotta stop using the wallet as a private key
 }

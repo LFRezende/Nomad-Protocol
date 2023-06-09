@@ -6,6 +6,7 @@ const GOERLI_CHAIN_ID = 5;
 let connectButton = document.getElementById("connectWallet");
 let factText = document.getElementById("checkText");
 let factButton = document.getElementById("factButton");
+let responseDiv = document.getElementById("response");
 
 connectButton.onclick = connect;
 factButton.onclick = isFakeCheck;
@@ -60,8 +61,16 @@ async function isFakeCheck() {
       const check = await contract.isFake(text);
       console.log(`Is it true? Answer: ${check}`);
       console.log("Done!");
+      if (check == false) {
+        responseDiv.textContent =
+          "⚠️ No sources emitted this material - Possibly FAKE! ⚠️";
+      } else if (check == true) {
+        responseDiv.textContent = "✅ The info was indeed published! ✅ ";
+      }
+      console.log(`Is it true? Answer: ${check}`);
     } catch (isFakeCheckError) {
       console.log(isFakeCheckError);
+      return;
     }
   } else {
     connectButton.innerHTML = "No Wallet Available";
