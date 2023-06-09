@@ -137,6 +137,14 @@ body {
   transition: 1s;
 }
 
+#smallerText {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+#developerAdd {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
 #trustText:hover {
   transition: 1s;
   border-bottom: 1px solid transparent;
